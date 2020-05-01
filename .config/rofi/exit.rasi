@@ -29,14 +29,11 @@ configuration {
 }
 
 #mainbox {
-    background-color: #e9e9e900;
+    background-color: #d32f2f;
     children: [listview];
     spacing: 10px;
     /*margin: 20%;*/
     padding: 20px 20px;
-    border-radius: 0px;
-    border: 0px 0px 0px 0px;
-    border-color: #686868;
 }
 
 
@@ -51,15 +48,13 @@ configuration {
 
 #element {
     background-color: #e9e9e900;
-    padding: 3 0 4 4 ;
+    padding: 16 20;
+    border-radius: 9px;
 }
 
 #element selected {
-    background-color: #ffffff00;
-    border: 0;
-    border-color: #dddddd;
-    padding: 3 0 4 4 ;
-    text-color: #cc4444;
+    background-color:               #f2f2f230;
+    text-color:                     #ffffff;
 }
 
 #element-icon {

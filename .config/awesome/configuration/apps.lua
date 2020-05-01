@@ -8,8 +8,8 @@ return {
 
 	-- The default applications in keybindings and widgets
 	default = {
-		terminal 										= 'alacritty',                                  -- Terminal Emulator
-		text_editor 									= 'code',                                  -- GUI Text Editor
+		terminal 										= 'kitty',                                  -- Terminal Emulator
+		text_editor 									= 'textadept',                                  -- GUI Text Editor
 		web_browser 									= 'opera',                                -- Web browser
 		file_manager 									= 'pcmanfm',                                -- GUI File manager
 		network_manager 								= 'networkmanager_dmenu -theme wifi',					-- Network manager
@@ -26,7 +26,7 @@ return {
 														  '/configuration/rofi/sidebar/rofi.rasi', 	-- Rofi Web Search
 		
 
-		rofiappmenu 									= 'rofi -show drun -theme default'   -- Application Menu
+		rofiappmenu 									= 'rofi -show drun -theme apps'   -- Application Menu
 		-- You can add more default applications here
 	},
 	
@@ -40,14 +40,15 @@ return {
 		--'blueman-applet',                                                                           -- Bluetooth tray icon
 		--'mpd',                                                                                      -- Music Server
 		--'xfce4-power-manager',
+		'libinput-gestures-setup start',
 		'nitrogen --restore',
-		'/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &' .. 
+		'/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1' .. 
 		' eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)',                 	-- Credential manager
 		
 		'xrdb $HOME/.Xresources',                                                                   -- Load X Colors
 		--'nm-applet',                                                                                -- NetworkManager Applet
 		--'pulseeffects --gapplication-service',                                                      -- Sound Equalizer
-		
+		'xmodmap -e "keycode  77 ="',		
 		'xidlehook --not-when-fullscreen --not-when-audio --timer 600 '..
 		' "awesome-client \'_G.show_lockscreen()\'" ""'  											-- Auto lock timer
 

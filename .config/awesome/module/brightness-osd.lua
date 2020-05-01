@@ -59,13 +59,10 @@ screen.connect_signal("request::desktop_decoration", function(s)
 
 			local brightness_level = bri_osd_slider:get_value()
 			
-			spawn('xbacklight -set' .. math.max(brightness_level, 5), false)
+			spawn('xbacklight -set ' .. math.max(brightness_level, 1), false)
 
 			-- Update textbox widget text
 			osd_value.text = brightness_level .. '%'
-
-			-- Update the brightness slider if values here change
-			awesome.emit_signal('widget::brightness:update', brightness_level)
 
 			if s.show_bri_osd then
 				awesome.emit_signal(
@@ -98,9 +95,14 @@ screen.connect_signal("request::desktop_decoration", function(s)
 
 	-- The emit will come from brightness slider
 	awesome.connect_signal(
-		'module::brightness_osd',
-		function(brightness)
-			bri_osd_slider:set_value(brightness)
+		'widget::brightness',
+		function()
+            awful.spawn.easy_async_with_shell([[bash -c "xbacklight"]], 
+                    function(stdout)
+                            local brightness = string.match(stdout, '(%d+)')
+			                bri_osd_slider:set_value(tonumber(brightness))
+		            end
+	        )
 		end
 	)
 

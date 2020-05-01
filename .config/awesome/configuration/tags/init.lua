@@ -1,6 +1,7 @@
 local awful = require('awful')
 local gears = require('gears')
 local beautiful = require('beautiful')
+local dpi = beautiful.xresources.apply_dpi
 
 local icons = require('theme.icons')
 
@@ -58,21 +59,21 @@ local tags = {
 		type = 'any',
 		default_app = '',
 		screen = 1
-	}
-	-- {
-	--   icon = icons.social,
-	--   type = 'social',
-	--   default_app = 'discord',
-	--   screen = 1
-	-- }
+	},
+	{
+		icon = icons.social,
+		type = 'social',
+		default_app = 'discord',
+		screen = 1
+	},
 }
 
 
 tag.connect_signal("request::default_layouts", function()
     awful.layout.append_default_layouts({
-		awful.layout.suit.spiral.dwindle,
+		awful.layout.suit.floating,
 		awful.layout.suit.tile,
-		awful.layout.suit.max
+		awful.layout.suit.max,
     })
 end)
 
@@ -84,7 +85,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
 			{
 				icon = tag.icon,
 				icon_only = true,
-				layout = awful.layout.suit.spiral.dwindle,
+				layout = awful.layout.suit.tile,
 				gap_single_client = false,
 				gap = beautiful.useless_gap,
 				screen = s,
@@ -100,6 +101,11 @@ tag.connect_signal(
 	'property::layout',
 	function(t)
 		local currentLayout = awful.tag.getproperty(t, 'layout')
+		if (currentLayout == awful.layout.suit.max.fullscreen) then
+			t.screen.top_panel.visible = false
+		else
+			t.screen.top_panel.visible = true
+		end
 		if (currentLayout == awful.layout.suit.max) then
 			t.gap = 0
 		else

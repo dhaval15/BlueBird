@@ -307,7 +307,7 @@ local TopPanel = function(s, offset)
 
 	s.month_calendar:attach(
 		s.clock_widget, 
-		'tc', 
+		'bc', 
 		{ 
 			on_pressed = true,
 			on_hover = false 

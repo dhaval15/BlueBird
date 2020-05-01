@@ -17,14 +17,14 @@ configuration {
 
 * {
     columns: 2;
-    background-color:  #161116;
+    background-color:  #0C0C22;
     border-radius: 1;
     text-color: #dddddd;
-    font: "Hack 9";
+    font: "Hack 10";
 }
 
 #window {
-    /*fullscreen:true;*/
+    fullscreen:true;
     location: north;
     padding: 0;
     width: 100%;
@@ -53,15 +53,13 @@ configuration {
 
 #element {
     background-color: #e9e9e900;
-    padding: 3 0 4 4 ;
+    padding: 8 10 ;
+    border-radius: 9px;
 }
 
 #element selected {
-    background-color: #ffffff00;
-    border: 0;
-    border-color: #dddddd;
-    padding: 3 0 4 4 ;
-    text-color: #00ffcc;
+    background-color:               #f2f2f215;
+    text-color:                     #ffffff;
 }
 
 #element-icon {
@@ -72,10 +70,13 @@ configuration {
 
 #inputbar {
     children:   [appbar, prompt,textbox-prompt-colon,entry,case-indicator ];
-    padding: 8px 4px;
+    padding: 8px 8px;
     border: 1;
-    border-color: #282228;
+    border-color: #555555;
     border-radius: 8;
+    text-color: #ff0000;
+    background-color: #00000000;
+    margin: 8px 25%;
 }
 
 #case-indicator {

@@ -98,9 +98,14 @@ screen.connect_signal("request::desktop_decoration", function(s)
 
 	-- The emit will come from the volume-slider
 	awesome.connect_signal(
-		'module::volume_osd',
-		function(volume)
-			vol_osd_slider:set_value(volume)
+		'widget::volume',
+		function()
+            awful.spawn.easy_async_with_shell([[bash -c "amixer -D pulse sget Master"]],
+		      function(stdout)
+                    local volume = string.match(stdout, '(%d?%d?%d)%%')
+                    vol_osd_slider:set_value(tonumber(volume))
+		      end
+	       )
 		end
 	)
 

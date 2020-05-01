@@ -155,10 +155,10 @@ local awesome_overrides = function(theme)
 	theme.menu_border_width = dpi(20)
 	theme.menu_bg_focus = theme.accent .. 'CC'
 
-	theme.menu_bg_normal =  theme.background:sub(1,7) .. '33'
+	theme.menu_bg_normal =  theme.background
 	theme.menu_fg_normal = '#ffffff'
 	theme.menu_fg_focus = '#ffffff'
-	theme.menu_border_color = theme.background:sub(1,7) .. '5C'
+	theme.menu_border_color = theme.background
 
 	-- Tooltips
 
@@ -178,15 +178,15 @@ local awesome_overrides = function(theme)
 
 	theme.layout_max = theme.icons .. 'layouts/max.svg'
 	theme.layout_tile = theme.icons .. 'layouts/tile.svg'
-	theme.layout_dwindle = theme.icons .. 'layouts/dwindle.svg'
 	theme.layout_floating = theme.icons .. 'layouts/floating.svg'
+	theme.layout_fullscreen = theme.icons .. 'layouts/fullscreen.svg'
 	
 	-- Taglist
 
 	theme.taglist_bg_empty = theme.background .. '99'
-	theme.taglist_bg_occupied =  '#ffffff' .. '1A'
+	theme.taglist_bg_occupied =  '#666666' .. '2A'
 	theme.taglist_bg_urgent = "#E91E63" .. '99'
-	theme.taglist_bg_focus = theme.background
+	theme.taglist_bg_focus = "#ffffff" .. '2F'
 	theme.taglist_spacing = dpi(0)
 
 	-- Tasklist
@@ -226,6 +226,12 @@ local awesome_overrides = function(theme)
 	theme.hotkeys_label_bg = "#ffffff"
 	theme.hotkeys_border_width = dpi(0)
 
+
+	theme.modebox_border_width = dpi(16)
+	theme.modalbind_font = 'SF Pro Text Regular 12'
+	theme.modebox_fg = "#ffffff"
+	theme.modebox_key = "#55FF77"
+	theme.modebox_bg = "#00000000"
 
 end
 

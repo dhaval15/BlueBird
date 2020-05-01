@@ -8,21 +8,20 @@ configuration {
     display-drun:                   "";
     drun-display-format:            "{name}";
     show-icons: true;
-    sidebar-mode:true;
+    /*sidebar-mode:true;*/
 }
 
 @import "colors"
 
 * {
     columns: 1;
-    background-color:  #00000099;
-    border-radius: 1;
+    border-radius: 0;
+    background-color:  #0C0C22;
     text-color: #dddddd;
     font: "Hack bold 10";
 }
 
 #window {
-    /*fullscreen:true;*/
     location: west;
     padding: 0;
     width: 22%;
@@ -30,14 +29,10 @@ configuration {
 }
 
 #mainbox {
-    background-color: #e9e9e900;
+    background-color: #311b92;
     children: [listview,inputbar];
     spacing: 10px;
-    /*margin: 20%;*/
     padding: 20px 20px;
-    border-radius: 0px;
-    border: 0px 0px 0px 0px;
-    border-color: #666677;
 }
 
 
@@ -52,15 +47,13 @@ configuration {
 
 #element {
     background-color: #e9e9e900;
-    padding: 3 0 4 4 ;
+    padding: 6 8 ;
+    border-radius: 4px;
 }
 
 #element selected {
-    background-color: #ffffff00;
-    border: 0;
-    border-color: #dddddd;
-    padding: 3 0 4 4 ;
-    text-color: #ffcc00;
+    background-color:               #f2f2f230;
+    text-color:                     #ffffff;
 }
 
 #element-icon {
@@ -78,8 +71,8 @@ configuration {
     children:   [appbar, prompt,textbox-prompt-colon,entry,case-indicator ];
     padding: 8px 4px;
     border: 1;
-    border-color: #555555;
-    border-radius: 8;
+    border-color: #ffffff77;
+    border-radius: 2;
     text-color: #ff0000;
     background-color: #00000000;
 }
@@ -108,5 +101,5 @@ configuration {
     background-color: #00000000;
     expand:     false;
     str:        "Apps";
-    margin:     0px 0.3em 0em 0em ;
+    margin:     0px 0em 0em 0em ;
 }

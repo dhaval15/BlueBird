@@ -2,7 +2,7 @@ configuration {
     font:                           "Hack Bold 11";
     show-icons:                     true;
     drun-display-format:            "{name}";
-    fullscreen:                     false;
+    fullscreen:                     true;
     threads:                        0;
     scroll-method:                  0;
     disable-history:                false;
@@ -23,7 +23,7 @@ configuration {
 
 window {
     transparency:                   "real";
-    background-color:               #00000080;
+    background-color:               #0C0C22;
     text-color:                     @foreground;
     height:                         100%;
     width:                          100%;
@@ -88,7 +88,7 @@ inputbar {
 
 listview {
     background-color:               @background;
-    columns:                        6;
+    columns:                        7;
     spacing:                        4px;
     cycle:                          false;
     dynamic:                        true;
@@ -138,7 +138,7 @@ element alternate.active {
 }
 
 element selected {
-    background-color:               @background-alt;
+    background-color:               #ffffff30;
     text-color:                     @foreground-selected;
 }
 

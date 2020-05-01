@@ -115,7 +115,8 @@ ruled.client.connect_signal("request::rules", function()
 				"XTerm",
 				"UXTerm",
 				"kitty",
-				"K3rmit"
+				"K3rmit",
+                "alacritty",
 			},
 		},
 		except_any = {
@@ -136,7 +137,8 @@ ruled.client.connect_signal("request::rules", function()
 		rule_any   = { 
 			class = {
 				"firefox",
-				"Tor Browser"
+				"Tor Browser",
+                "brave",
 			}
 		},
 		properties = { 
